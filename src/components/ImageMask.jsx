@@ -220,7 +220,7 @@ const ImageMasking = ({image, canvasHeight, canvasWidth}) => {
                                     // enablePanAndZoom={true}
                                     lazyRadius={0}
                                     backgroundColor={`hsl(${layerHue} ${layerSaturation}% ${layerLightness}% / ${layerOpacity}%)`}
-                                    brushColor={`rgba(255, 255, 255, ${brushOpacity/100}`}
+                                    brushColor={`rgba(0, 0, 0, ${brushOpacity/100}`}
                                     onChange={throttledUpdateMaskedImage}
                                     disabled={image?false:true}
                                 />
