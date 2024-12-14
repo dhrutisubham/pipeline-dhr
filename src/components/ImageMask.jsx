@@ -269,7 +269,7 @@ const ImageMasking = ({image, canvasHeight, canvasWidth}) => {
 
                             {image && (
                                 <button className='w-fit bg-slate-200 border-2 rounded-md border-black px-4 py-2 my-4'
-                                    onClick={handleImageDownload(maskedCanvasRef)}
+                                    onClick={()=>handleImageDownload(maskedCanvasRef)}
                                 >
                                 Download Image
                                 </button>
