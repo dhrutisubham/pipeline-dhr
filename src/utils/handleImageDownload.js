@@ -1,4 +1,4 @@
-export const handleImageDownload = () => {
+export const handleImageDownload = (maskedCanvasRef) => {
         if (!maskedCanvasRef.current) return;
 
         // Convert canvas to data URL

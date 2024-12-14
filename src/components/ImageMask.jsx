@@ -220,7 +220,7 @@ const ImageMasking = ({image, canvasHeight, canvasWidth}) => {
                                     // enablePanAndZoom={true}
                                     lazyRadius={0}
                                     backgroundColor={`hsl(${layerHue} ${layerSaturation}% ${layerLightness}% / ${layerOpacity}%)`}
-                                    brushColor={`rgba(0, 0, 0, ${brushOpacity/100}`}
+                                    brushColor={`rgba(255, 255, 255, ${brushOpacity/100}`}
                                     onChange={throttledUpdateMaskedImage}
                                     disabled={image?false:true}
                                 />
@@ -269,7 +269,7 @@ const ImageMasking = ({image, canvasHeight, canvasWidth}) => {
 
                             {image && (
                                 <button className='w-fit bg-slate-200 border-2 rounded-md border-black px-4 py-2 my-4'
-                                    onClick={handleImageDownload}
+                                    onClick={handleImageDownload(maskedCanvasRef)}
                                 >
                                 Download Image
                                 </button>
