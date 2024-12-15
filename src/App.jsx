@@ -15,7 +15,7 @@ function App(){
   
   return (
     <section className='mainApp'>
-    <h3>Mask your Image</h3>
+    <h3>Mask Your Image</h3>
     <h6 className='mb-6'>Image Pipeline</h6>
     {!image && 
     (
