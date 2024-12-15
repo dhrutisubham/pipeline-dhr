@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# Mask Your Image - Image Pipeline
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Mask Your Image - Image Pipeline** is a web application built using React that allows users to upload an image, mask it interactively using a canvas, and download both the original and masked images. The tool is designed to be simple, intuitive, and efficient, providing users with the flexibility to manipulate their images as needed.
 
-## Available Scripts
+### Features
+- Upload any image from your device.
+- Interactive masking with a user-friendly interface.
+- Alter layer settings such as opacity and layer blending to customize your masking.
+- Adjust brush settings, including size, color, and opacity, for precise masking.
+- Download both the original and masked images.
+- Built with modern technologies like React, React Icons, and TailwindCSS.
 
-In the project directory, you can run:
 
-### `npm start`
+### Purpose
+This project demonstrates a simple yet effective approach to image manipulation in the browser using React. It can be a foundational tool for similar applications like photo editing, annotation tools, or creative drawing platforms.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Tech Stack
+- **Frontend**: 
+  - React.js
+  - React Icons
+  - TailwindCSS
+  - react-canvas-draw (for canvas-based image masking)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Tools & Libraries**:
+  - npm (Node package manager)
+  - react-scripts (for build and development)
 
-### `npm test`
+- **Development Environment**:
+  - VS Code or any text editor of your choice
+  - Browser (for testing and deployment)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Setup Instructions
 
-### `npm run build`
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/your-username/image-line.git
+    cd image-line
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Install dependencies**:
+    Run the following command to install the required dependencies:
+    ```bash
+    npm install --force
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    > Note: The `--force` flag might be required to avoid potential dependency conflicts.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Start the development server**:
+    After the installation is complete, start the development server with the following command:
+    ```bash
+    npm start
+    ```
 
-### `npm run eject`
+4. **Open the application**:
+    Open your browser and go to `http://localhost:3000` to see the application in action.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Usage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Upload an Image**:
+   - Click the "Upload Image" button to select and upload an image file from your device. The image will be displayed on the screen.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. **Mask the Image**:
+   - Once the image is uploaded, you can mask parts of the image using the canvas and brush tools.
+   - Adjust the brush size and opacity as needed to control the masking.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. **Download the Images**:
+   - After masking the image, click the "Download" button to download both the original and the masked image as PNG files.
 
-## Learn More
+4. **Reset**:
+   - If you want to start over, click the "Reset" button to clear the canvas and upload a new image.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+These are the scripts available for use with this project:
 
-### Analyzing the Bundle Size
+- `npm start`: Starts the development server and opens the app in the browser at `http://localhost:3000`.
+- `npm run build`: Bundles the application for production, optimizing and minifying the code.
+- `npm test`: Runs the tests for the application (if any are defined).
+- `npm run eject`: Ejects the project from `create-react-app` configurations, exposing webpack and other config files.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+> **Note**: You should use `npm start` for local development and `npm run build` when preparing the app for production.
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Future Enhancements
 
-### Advanced Configuration
+1. **Eraser Tool**:
+   - Implement an eraser tool that allows users to erase parts of the image that were previously masked, providing more control and flexibility in image editing.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+2. **Canvas and Image Scaling**:
+   - Add functionality to scale the canvas and the uploaded image. This will allow users to adjust the canvas size to fit different image dimensions and work more efficiently with large or small images.
 
-### Deployment
+3. **Different Brush Shapes**:
+   - Introduce different brush shapes (e.g., round, square, or custom shapes) to give users more variety and precision in masking different areas of the image.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+4. **Multilayer Support**:
+   - Implement support for multiple layers in the masking process, allowing users to work with different layers separately. This would provide advanced control over image manipulation, enabling users to apply masks to different layers independently.
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author
+
+This project was developed by Dhrutisundar Sahoo [dhrutisundar.me](https://dhrutisundar.me). Feel free to reach out if you have any questions or suggestions!
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
