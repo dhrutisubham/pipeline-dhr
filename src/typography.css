@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities{
+    .heading-l{
+        @apply font-lucida font-bold text-[42px] leading-tight sm:text-5xl;
+    }
+    .heading-m{
+        @apply font-lucida text-[2.5rem];
+    }
+    .heading-s{
+        @apply font-lucida text-[2rem] leading-tight;
+    }
+    .heading-xs{
+        @apply font-lucida text-[1.5rem];
+    }
+
+    .heading-xxs{
+        @apply font-lucida text-xl;
+    }
+
+    .body-xxs{
+        @apply font-roboto font-normal text-xs tracking-wide;
+    }
+
+    .body-xs{
+        @apply font-roboto font-normal text-sm tracking-wide;
+    }
+
+    .body-xs-select{
+        @apply font-roboto font-medium text-base lg:text-sm tracking-wide;
+    }
+    .body-s{
+        @apply font-roboto font-normal text-base tracking-wide;
+    }
+    .body-m{
+        @apply font-roboto font-semibold text-lg leading-tight;
+    }
+    .body-l{
+        @apply font-roboto font-semibold text-xl;
+    }
+    .subtitle{
+        @apply font-roboto font-medium text-base sm:text-xl uppercase tracking-widest;
+    }
+
+    .bggradient{
+        background: linear-gradient(100deg, #388CB3 -52.14%, #0A628A 63.21%); 
+    }
+}
