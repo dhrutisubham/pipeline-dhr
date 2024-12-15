@@ -219,11 +219,11 @@ const ImageMasking = ({ image, canvasHeight, canvasWidth }) => {
           </div>
           {image && (
             <button
-              onClick={() => handleImageDownload(maskedCanvasRef)}
+              onClick={() => handleImageDownload(maskedCanvasRef, image)}
               className="w-full flex items-center justify-center bg-green-500 text-white py-2 rounded"
             >
               <FiDownload className="mr-2" />
-              Download Image
+              Download Images
             </button>
           )}
         </div>
