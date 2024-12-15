@@ -46,10 +46,27 @@ const ImageMasking = ({ image, canvasHeight, canvasWidth }) => {
     if (image) updateMaskedImage();
   }, [image, updateMaskedImage]);
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+        if ((event.ctrlKey || event.metaKey) && event.key === 'z') {
+        event.preventDefault(); // Prevent the default undo behavior in the browser
+        canvasRef.current.undo();
+        }
+    };
+
+    // Add event listener for keydown
+    window.addEventListener('keydown', handleKeyDown);
+
+    // Clean up event listener when component is unmounted
+    return () => {
+        window.removeEventListener('keydown', handleKeyDown);
+    };
+}, []);
+
   return (
     <div className="flex flex-row h-screen gap-4">
       {/* Left Section: Layer and Brush Settings */}
-      <div className="flex flex-col gap-4 w-1/4 p-6 bg-gray-100 rounded-xl shadow-lg">
+      <div className="flex flex-col gap-10 w-1/4 p-6 bg-gray-100 rounded-xl shadow-lg">
         {/* Layer Settings */}
         <div className="space-y-4">
           <div className="flex items-center gap-2">
@@ -136,18 +153,21 @@ const ImageMasking = ({ image, canvasHeight, canvasWidth }) => {
       {/* Middle Section: Canvas */}
       <div className="flex flex-1 justify-center items-center cursor-crosshair bg-white">
         <div className="relative z-0">
-          <CanvasDraw
-            ref={canvasRef}
-            canvasWidth={canvasWidth}
-            canvasHeight={canvasHeight}
-            style={{ border: '1px solid black' }}
-            brushRadius={brushSize}
-            lazyRadius={0}
-            brushColor={`rgba(0, 0, 0, ${brushOpacity / 100})`}
-            onChange={throttledUpdateMaskedImage}
-            disabled={!image}
-            backgroundColor={`hsl(${layerHue} ${layerSaturation}% ${layerLightness}% / ${layerOpacity}%)`}
-          />
+            <div className={`${showMask?'opacity-100':'opacity-0'}`}>
+                <CanvasDraw
+                    ref={canvasRef}
+                    canvasWidth={canvasWidth}
+                    canvasHeight={canvasHeight}
+                    style={{ border: '1px solid black' }}
+                    brushRadius={brushSize}
+                    lazyRadius={0}
+                    brushColor={`rgba(0, 0, 0, ${brushOpacity / 100})`}
+                    onChange={throttledUpdateMaskedImage}
+                    disabled={!image}
+                    backgroundColor={`hsl(${layerHue} ${layerSaturation}% ${layerLightness}% / ${layerOpacity}%)`}
+                />
+
+            </div>
           {image && (
             <canvas
               ref={maskedCanvasRef}
@@ -161,7 +181,7 @@ const ImageMasking = ({ image, canvasHeight, canvasWidth }) => {
       </div>
 
       {/* Right Section: Canvas Options and Download */}
-      <div className="flex flex-col w-1/4 p-6 bg-gray-100 gap-4 rounded-xl shadow-lg">
+      <div className="flex flex-col w-1/4 p-6 bg-gray-100 gap-10 rounded-xl shadow-lg">
         {/* Canvas Options */}
         <div className="space-y-2">
           <div className="flex items-center gap-2">
@@ -187,7 +207,7 @@ const ImageMasking = ({ image, canvasHeight, canvasWidth }) => {
             className="w-full flex items-center justify-center bg-gray-500 text-white py-2 rounded"
           >
             <FiCornerUpLeft className="mr-2" />
-            Undo
+            Undo (Ctrl+Z)
           </button>
         </div>
 
