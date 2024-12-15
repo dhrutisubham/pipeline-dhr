@@ -9,6 +9,10 @@
 - Adjust brush settings, including size, color, and opacity, for precise masking.
 - Download both the original and masked images.
 - Built with modern technologies like React, React Icons, and TailwindCSS.
+## Live Demo
+
+You can view the live demo of the project here: [Mask Your Image - Image Pipeline](https://pipeline-mask.netlify.app/).
+
 
 
 ### Purpose
